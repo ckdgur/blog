@@ -1,34 +1,117 @@
 ---
 layout: post
-title:  "Welcome to Jekyll Paper!"
-date:   2018-02-11
+title:  "Main.java수업"
+date:   2023-07-23
 last_modified_at: 2018-09-20
 categories: [Jekyll Paper]
 tags: [Getting Start]
 ---
 
-Jekyll Paper is a Jekyll theme, it is designed to helping you to create your own blog by the easiest way. Now, you can learn how to use this blog by this post.
+##1.변수와 자료형  
+###1-1.변수(Variable)
+---
+다음과 같은 a,b를 변수라 한다.
+변수:어떤 정해지지 않은 임의의 값을 표현하기 위해 사용된'기호'--'변하는 숫자'
+```
+int a;
+String b;
+```
+변수의 특성상 이름을 바꿀수 있다.(a,b->one,two)
+```
+int one;
+String two;
+```
+######변수의 이름을 지을때 몇가지의 규칙
+- 변수명은 숫자로 시작못함
+- _(밑줄)와 $ 문자 이외의 특수문자는 사용이 불가능하다
+- 자바의 키워드는 변수명을 사용 불가능하다.(예시:int,class,return)
+######[참고] 자바의 키워드
+```
+abstract  continue  for         new        switch
+assert    default   goto        package    synchronized
+boolean   do        if          private    this
+break     double    implements  protected  throw
+byte      else      import      public     throws
+case      enum      instanceof  return     transient
+catch     extends   int         short      try
+char      final     interface   static     void
+class     finally   long        strictfp   volatile
+const     float     native      super      while
+```
+다음은 변수명을 잘못사용한 예
+```
+int 1st;   // 변수명은 숫자로 시작할 수 없다.
+int a#;    // 변수명에 특수문자를 사용할 수 없다.
+int class; // 키워드를 변수명으로 사용할 수 없다.
+```
+###1-2.자료형(Type)
+---
+변수명의 앞의 int,String 등은 변수의 자료형(Type)을 뜻함.
+`
+int a;` 라는 문장은 다음과 같이 해석.
+"변수 a는 int자료형 변수이다."즉,a라는 변수에는 int 자료형 값(예:1, 10, 25등의 정수)만 가능하다."
 
-You’ll find this post in your `_posts` directory. Go ahead and edit it and reload the page to see your changes. You can edit this post on Github or your local repository copy.
+`
+String;`라는 문장은 다음과 같이 해석된다.
+"변수 b는 String 자료형 변수이다." 즉, b라는 변수에는 String 자료형 값(문자열-예시:"a","hello")만 담을 수 있다."
+###1-3.변수에 값 대입하는법
+---
+변수 선언 후 다음과 같이 변수에 값을 대입 할 수 있다
+```
+int a;
+String b;
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.md` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
-
-Jekyll also offers powerful support for code snippets:
-
-```c
-#include <stdio.h>
-
-int main(int argc, char *argv[]) {
-  printf("Hello World!\n");
-  return 0;
-}
-
-// => prints 'Hello World!' to STDOUT.
+a = 1;
+b = "hello java";
 ```
 
-Check out the [Jekyll Paper docs][jekyll-paper-docs] or [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. If you have questions or suggestions, you can create an issue to asking them on [Jekyll Paper Issues][jekyll-paper-issues] or [Jekyll Talk][jekyll-talk].
+변수에 값을 대입할 때는 위의 예에서와 같이 `=`기호를 사용한다.
+`a=1;`이라는 문장은 다음과 같이 해석된다.
+"int자료형 변수 a에 1이라는 값을 대입한다."
+`b="hello java";`라는 문장은 다음과 같이 해석된다.
+"String자료형 변수b에 "hello java"라는 값을 대입할수도 있다.
+| 점프투 자바 | 
+|:----------|
+| 만약 int 자료형 변수인 a에 문자열을 대입하면 어떻게 될까?```int a = "Hello java";``` IDE에서는 다음과 같은 오류메시지를 보여준다.```Type mismatch: cannot convert from String to int```오류메시지는 String자료형을 int자료형으로 사용할수 없다는 오류이다.
+###1-4.자주 쓰이는 자료형
+---
+자료형에는 int,String이외의 많은 자료형이 존재한다. 자바에서 가장많이 사용되는 자료형에는 다음과 같은 것 들이 존재한다
+- int
+- long
+- double
+- boolean
+- char
+- String
+- StringBuffer
+- List
+- Map
+- Set
 
-[jekyll-paper-docs]: https://github.com/ghosind/Jekyll-Paper/wiki
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-paper-issues]: https://github.com/ghosind/Jekyll-Paper/issues
-[jekyll-talk]: https://talk.jekyllrb.com/
+예를 들어 StringBuffer, List 자료형에 해당되는 변수는 다음과 같이 만들 수 있다.
+```
+StringBuffer sb;
+List myList;
+```
+위 코드는 다음과 같이 해석 된다.
+
+"sb 변수는 StringBuffer 자료형 변수이다. sb 변수에는 StringBuffer 자료형에 해당하는 값만 담을 수 있다.", "myList 변수는 List 자료형 변수이다. myList 변수에는 List 자료형에 해당하는 값만 담을 수 있다."
+###1-5.사용자 정의 자료형
+---
+사용자가 직접 만들어내는 자료형도 있다.
+예시로 animal이라는 클래스를 만든다고 해보겠다.
+```
+class Animal {
+}
+```
+이후에 Animal 자료형 속 변수를 만들어낼수 있다.
+```
+Animal cat;
+```
+위 코드는 다음과 같이 해석 될 수 있다.
+
+"cat 이라는 변수는 Animal 자료형 변수이다. cat이라는 변수에는 Animal 자료형에 해당되는 값만 담을 수 있다."
+
+이상과 같이 변수와 자료형의 관계에 대해서 알아보았다. 자료형과 클래스에 대해서는 앞으로 자세하게 알아볼 것이다. 자료형과 클래스에 대한 궁금증은 잠시 뒤로 미루도록 하자.
+
+---
+##2.
