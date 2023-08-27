@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "리녹스 명령어"
+title:  "리눅스 명령어"
 date:   2023-07-23
 last_modified_at: 2018-09-20
 categories: [Jekyll Paper]
