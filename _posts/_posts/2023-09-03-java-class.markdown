@@ -1,3 +1,11 @@
+---
+layout: post
+title:  "클래스"
+date:   2023-09-03
+last_modified_at: 2018-09-20
+categories: [Jekyll Paper]
+tags: [Getting Start]
+---
 ### 1.Class/클래스
 ---
 ##### Car.java라는 javaclass생성
